@@ -12,7 +12,7 @@ export const navLinks = [
   {
     id: 3,
     name: "Work",
-    href: "#work",
+    href: "#projects",
   },
   {
     id: 4,
@@ -80,7 +80,7 @@ export const myProjects = [
       {
         id: 2,
         name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        path: "/assets/tailwindcss.png",
       },
       {
         id: 3,
@@ -117,7 +117,7 @@ export const myProjects = [
       {
         id: 2,
         name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        path: "/assets/tailwindcss.png",
       },
       {
         id: 3,
@@ -156,7 +156,7 @@ export const myProjects = [
       {
         id: 2,
         name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        path: "/assets/tailwindcss.png",
       },
       {
         id: 3,
@@ -193,7 +193,7 @@ export const myProjects = [
       {
         id: 2,
         name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        path: "/assets/tailwindcss.png",
       },
       {
         id: 3,
@@ -230,7 +230,7 @@ export const myProjects = [
       {
         id: 2,
         name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        path: "/assets/tailwindcss.png",
       },
       {
         id: 3,
@@ -257,10 +257,10 @@ export const calculateSizes = (
     cubePosition: isSmall
       ? [4, -5, 0]
       : isMobile
-      ? [5, -5, 0]
+      ? [5, -5, 4]
       : isTablet
-      ? [5, -5, 0]
-      : [9, -5.5, 0],
+      ? [5, -5, 4]
+      : [9, -5.5, 4],
     reactLogoPosition: isSmall
       ? [3, 4, 0]
       : isMobile
@@ -269,12 +269,12 @@ export const calculateSizes = (
       ? [5, 4, 0]
       : [12, 3, 0],
     ringPosition: isSmall
-      ? [-25, 29, 0]
+      ? [-30, 35, 0]
       : isMobile
-      ? [-28, 29, 0]
+      ? [-37, 34, 0]
       : isTablet
-      ? [-31, 26, 0]
-      : [-33, 28, 0],
+      ? [-40, 28, 0]
+      : [-44, 31, 0],
     targetPosition: isSmall
       ? [-5, -10, -10]
       : isMobile
