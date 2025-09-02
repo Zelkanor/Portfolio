@@ -1,12 +1,17 @@
 import { useGSAP } from "@gsap/react";
 import { useGLTF } from "@react-three/drei";
 import gsap from "gsap";
-import { JSX, useRef } from "react";
+import { useRef } from "react";
 import { Group } from "three";
 
 gsap.registerPlugin(useGSAP);
 
-const Target = (props: JSX.IntrinsicElements["mesh"]) => {
+type TargetProps = {
+  position: [number, number, number];
+  scale: number;
+};
+
+const Target = ({ position, scale }: TargetProps) => {
   const targetRef = useRef<Group>(null);
   const { scene } = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf"
@@ -23,7 +28,12 @@ const Target = (props: JSX.IntrinsicElements["mesh"]) => {
   });
 
   return (
-    <mesh {...props} ref={targetRef} rotation={[0, Math.PI / 5, 0]} scale={1.5}>
+    <mesh
+      ref={targetRef}
+      rotation={[0, Math.PI / 5, 0]}
+      scale={scale}
+      position={position}
+    >
       <primitive object={scene} />
     </mesh>
   );

@@ -6,9 +6,10 @@ import * as THREE from "three";
 
 type RingsProps = {
   position: [number, number, number];
+  scale: number;
 };
 
-const Rings = ({ position }: RingsProps) => {
+const Rings = ({ position, scale }: RingsProps) => {
   const refList = useRef<THREE.Mesh[]>([]);
   const getRef = useCallback((mesh: THREE.Mesh | null) => {
     if (mesh && !refList.current.includes(mesh)) {
@@ -34,11 +35,11 @@ const Rings = ({ position }: RingsProps) => {
         .to(
           refList.current.map((r) => r.rotation),
           {
-            y: `+=${Math.PI * 2}`,
+            y: `+=${Math.PI * 2.0}`,
             x: `-=${Math.PI * 2}`,
-            duration: 2.5,
+            duration: 3,
             stagger: {
-              each: 0.15,
+              each: 0.5,
             },
           }
         );
@@ -50,7 +51,7 @@ const Rings = ({ position }: RingsProps) => {
 
   return (
     <Center>
-      <group scale={0.4}>
+      <group scale={scale} position={position}>
         {Array.from({ length: 4 }, (_, index) => (
           <mesh key={index} ref={getRef}>
             <torusGeometry args={[(index + 1) * 0.5, 0.1]}></torusGeometry>

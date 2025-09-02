@@ -252,68 +252,39 @@ export const calculateSizes = (
   isTablet: boolean
 ) => {
   return {
-    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
+    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.07,
     deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
+    cubeScale: isSmall ? 0.5 : isMobile ? 0.6 : 0.5,
+    reactLogoScale: isSmall ? 0.15 : isMobile ? 0.2 : 0.4,
+    ringScale: isSmall ? 0.5 : isMobile ? 0.4 : 0.5,
+    targetScale: isSmall ? 1.5 : isMobile ? 1.8 : 1.5,
     cubePosition: isSmall
-      ? [4, -5, 0]
+      ? [4.5, -6, 0]
       : isMobile
-      ? [5, -5, 4]
+      ? [3, -6, 4]
       : isTablet
       ? [5, -5, 4]
-      : [9, -5.5, 4],
+      : [8, -6, 4],
     reactLogoPosition: isSmall
       ? [3, 4, 0]
       : isMobile
-      ? [5, 4, 0]
+      ? [3, 5, 0]
       : isTablet
       ? [5, 4, 0]
       : [12, 3, 0],
     ringPosition: isSmall
-      ? [-30, 35, 0]
+      ? [-53, 40, 0]
       : isMobile
-      ? [-37, 34, 0]
+      ? [-52, 43, 0]
       : isTablet
-      ? [-40, 28, 0]
-      : [-44, 31, 0],
+      ? [-55, 28, 0]
+      : [-6, 15.5, 0],
     targetPosition: isSmall
-      ? [-5, -10, -10]
+      ? [-7, -10, -16]
       : isMobile
       ? [-9, -10, -10]
       : isTablet
-      ? [-11, -7, -10]
-      : [-13, -13, -10],
+      ? [-8, -7, -10]
+      : [-14, -13, -10],
   };
 };
-
-export const workExperiences = [
-  {
-    id: 1,
-    name: "Framer",
-    pos: "Lead Web Developer",
-    duration: "2022 - Present",
-    title:
-      "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: "/assets/framer.svg",
-    animation: "victory",
-  },
-  {
-    id: 2,
-    name: "Figma",
-    pos: "Web Developer",
-    duration: "2020 - 2022",
-    title:
-      "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: "/assets/figma.svg",
-    animation: "clapping",
-  },
-  {
-    id: 3,
-    name: "Notion",
-    pos: "Junior Web Developer",
-    duration: "2019 - 2020",
-    title:
-      "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: "/assets/notion.svg",
-    animation: "salute",
-  },
-];

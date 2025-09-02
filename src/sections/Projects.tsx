@@ -6,10 +6,9 @@ import gsap from "gsap";
 import Image from "next/image";
 import { Suspense, useState } from "react";
 
+import DemoComputer from "@/components/DemoComputer";
 import CanvasLoader from "@/components/loader";
 import { myProjects } from "@/constants";
-
-import DemoComputer from "@/components/DemoComputer";
 
 const projectCount = myProjects.length;
 
@@ -75,7 +74,7 @@ const Projects = () => {
           </div>
 
           <div className="flex items-center justify-between flex-wrap gap-5">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 ">
               {currentProject.tags.map((tag, index) => (
                 <div key={index} className="tech-logo">
                   <Image src={tag.path} alt={tag.name} width={20} height={20} />

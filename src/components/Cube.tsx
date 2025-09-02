@@ -5,7 +5,12 @@ import { useRef, useState } from "react";
 import { Group } from "three";
 import * as THREE from "three";
 
-const Cube = ({ ...props }) => {
+type CubeProps = {
+  position: [number, number, number];
+  scale: number;
+};
+
+const Cube = ({ position, scale }: CubeProps) => {
   const { nodes } = useGLTF("models/cube.glb") as unknown as {
     nodes: Record<string, THREE.Mesh>;
   };
@@ -34,11 +39,10 @@ const Cube = ({ ...props }) => {
   return (
     <Float floatIntensity={2}>
       <group
-        position={[9, -4, 0]}
+        position={position}
         rotation={[2.6, 0.8, -1.8]}
-        scale={0.74}
+        scale={scale}
         dispose={null}
-        {...props}
       >
         <mesh
           ref={cubeRef}

@@ -1,8 +1,12 @@
 import { Float, useGLTF } from "@react-three/drei";
-import { JSX } from "react";
 import * as THREE from "three";
 
-const ReactLogo = (props: JSX.IntrinsicElements["group"]) => {
+type ReactLogoProps = {
+  position: [number, number, number];
+  scale: number;
+};
+
+const ReactLogo = ({ position, scale }: ReactLogoProps) => {
   const { nodes, materials } = useGLTF("models/react.glb") as unknown as {
     nodes: Record<string, THREE.Mesh>;
     materials: Record<string, THREE.Material>;
@@ -10,7 +14,7 @@ const ReactLogo = (props: JSX.IntrinsicElements["group"]) => {
 
   return (
     <Float floatIntensity={1}>
-      <group position={[8, 8, 0]} scale={0.3} {...props} dispose={null}>
+      <group position={position} scale={scale} dispose={null}>
         <mesh
           geometry={nodes["React-Logo_Material002_0"].geometry}
           material={materials["Material.002"]}

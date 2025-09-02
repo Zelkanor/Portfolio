@@ -16,8 +16,8 @@ import Target from "@/components/Target";
 import { calculateSizes } from "@/constants";
 
 const Hero = () => {
-  const isSmall = useMediaQuery({ maxWidth: 440 });
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isSmall = useMediaQuery({ maxWidth: 380 });
+  const isMobile = useMediaQuery({ maxWidth: 450 });
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
@@ -46,14 +46,20 @@ const Hero = () => {
             <group>
               <Target
                 position={sizes.targetPosition as [number, number, number]}
+                scale={sizes.targetScale}
               />
               <ReactLogo
                 position={sizes.reactLogoPosition as [number, number, number]}
+                scale={sizes.reactLogoScale}
               />
               <Rings
                 position={sizes.ringPosition as [number, number, number]}
+                scale={sizes.ringScale}
               />
-              <Cube position={sizes.cubePosition} />
+              <Cube
+                position={sizes.cubePosition as [number, number, number]}
+                scale={sizes.cubeScale}
+              />
             </group>
 
             <ambientLight intensity={1} />
