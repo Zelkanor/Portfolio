@@ -252,39 +252,37 @@ export const calculateSizes = (
   isTablet: boolean
 ) => {
   return {
-    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.07,
-    deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
-    cubeScale: isSmall ? 0.5 : isMobile ? 0.6 : 0.5,
-    reactLogoScale: isSmall ? 0.15 : isMobile ? 0.2 : 0.4,
-    ringScale: isSmall ? 0.5 : isMobile ? 0.4 : 0.5,
-    targetScale: isSmall ? 1.5 : isMobile ? 1.8 : 1.5,
+    cubeScale: isSmall ? 0.4 : isMobile ? 0.5 : isTablet ? 0.6 : 0.8,
+    reactLogoScale: isSmall ? 0.15 : isMobile ? 0.18 : isTablet ? 0.3 : 0.4,
+    ringScale: isSmall ? 0.4 : isMobile ? 0.45 : isTablet ? 0.5 : 0.6,
+    targetScale: isSmall ? 1.2 : isMobile ? 1.4 : isTablet ? 1.6 : 1.8,
     cubePosition: isSmall
-      ? [4.5, -6, 0]
+      ? [8, -3, -10]
       : isMobile
-      ? [3, -6, 4]
+      ? [10, -4, -12]
       : isTablet
-      ? [5, -5, 4]
-      : [8, -6, 4],
+      ? [12, -3, -14]
+      : [15, -4, -16],
     reactLogoPosition: isSmall
-      ? [3, 4, 0]
+      ? [-8, 6, -10]
       : isMobile
-      ? [3, 5, 0]
+      ? [-10, 7, -12]
       : isTablet
-      ? [5, 4, 0]
-      : [12, 3, 0],
+      ? [-12, 6, -14]
+      : [-15, 8, -16],
     ringPosition: isSmall
-      ? [-53, 40, 0]
+      ? [0, -8, -10]
       : isMobile
-      ? [-52, 43, 0]
+      ? [0, -10, -12]
       : isTablet
-      ? [-55, 28, 0]
-      : [-6, 15.5, 0],
+      ? [0, -8, -14]
+      : [0, -12, -16],
     targetPosition: isSmall
-      ? [-7, -10, -16]
+      ? [-6, 3, -10]
       : isMobile
-      ? [-9, -10, -10]
+      ? [-8, 4, -12]
       : isTablet
-      ? [-8, -7, -10]
-      : [-14, -13, -10],
+      ? [-10, 3, -14]
+      : [-12, 5, -16],
   };
 };
