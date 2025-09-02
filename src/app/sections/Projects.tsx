@@ -128,7 +128,7 @@ const Projects = () => {
         {/* Header */}
         <div className="text-center mb-20 px-4">
           <div className="flex justify-center items-center gap-4 mb-6">
-            <Sparkles className="w-8 h-8 text-purple-400 animate-spin" />
+            <Sparkles className="w-8 h-8 text-purple-400 animate-spin " />
             <h2
               className={`text-5xl md:text-7xl font-black bg-gradient-to-r from-white via-purple-200 to-cyan-200 bg-clip-text text-transparent transition-all duration-1000 ${
                 isVisible
@@ -160,10 +160,10 @@ const Projects = () => {
           }`}
         >
           {/* Projects Container */}
-          <div className="px-20">
+          <div className="px-1">
             <div
               ref={scrollRef}
-              className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth pb-8"
+              className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth p-8"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               onScroll={updateActiveIndex}
             >

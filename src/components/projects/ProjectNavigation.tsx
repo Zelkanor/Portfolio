@@ -55,12 +55,6 @@ export function ProjectNavigation({
       >
         <ChevronRight className="w-5 h-5 text-white group-hover:translate-x-0.5 transition-transform duration-300" />
       </Button>
-
-      {/* Counter */}
-      <div className="ml-4 text-white/60 text-sm font-mono">
-        {String(currentIndex + 1).padStart(2, "0")} /{" "}
-        {String(totalProjects).padStart(2, "0")}
-      </div>
     </div>
   );
 }
